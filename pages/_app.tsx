@@ -8,24 +8,21 @@ import { getPlasmicAppUserFromToken } from '@plasmicapp/auth-api';
 import { useAuth } from '@clerk/nextjs';
 import { ExecuteEnsurePlasmicAppUser } from '@/plasmic-auth';
 import { useEffect, useState } from 'react';
+import { useEnsurePlasmicUser } from '@/hooks/useEnsurePlasmicUser';
 
 const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
-  
+  useEnsurePlasmicUser();
   
   return (
-    <ClerkProvider publishableKey={publishableKey}>
-      
-      <PlasmicRootWrapperWithAuth>
+    <ClerkProvider publishableKey={publishableKey} {...pageProps}>
         <PlasmicRootProvider Head={Head}>
         
             <Component {...pageProps}/>
 
         </PlasmicRootProvider>
-      </PlasmicRootWrapperWithAuth>
-
     </ClerkProvider>
   );
 }
