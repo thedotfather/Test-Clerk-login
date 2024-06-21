@@ -13,6 +13,7 @@ export default clerkMiddleware((auth, request) => {
 
   // If logged in, then EnsurePlasmicUser and save access-token
   console.log("middleware.ts:  before auth().userId check");
+  console.log("middleware: auth().userId: " + auth().userId);
   if(auth().userId){
     
     console.log("Running ExecuteEnsurePlasmicAppUser...");
