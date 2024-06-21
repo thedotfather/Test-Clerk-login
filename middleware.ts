@@ -7,10 +7,12 @@ const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmi
 
 export default clerkMiddleware((auth, request) => {
   if(!isPublicRoute(request)) {
+    console.log("middleware.ts:  before auth().protect check");
     auth().protect();
   }
 
   // If logged in, then EnsurePlasmicUser and save access-token
+  console.log("middleware.ts:  before auth().userId check");
   if(auth().userId){
     
     console.log("Running ExecuteEnsurePlasmicAppUser...");
