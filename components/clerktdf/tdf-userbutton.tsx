@@ -1,12 +1,21 @@
 import * as React from 'react';
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
-const TdfUserButton = () => {
+interface TdfUserButtonProps {
+    showName: boolean;
+}
+
+const TdfUserButton: React.FC<TdfUserButtonProps> = (
+    {
+        showName
+    }) => {
   return (
     <div>
         <SignedIn>
           {/* Mount the UserButton component */}
-          <UserButton />
+          <UserButton
+            showName={showName}
+          />
         </SignedIn>
         <SignedOut>
           {/* Signed out users get sign in button */}
