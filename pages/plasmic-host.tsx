@@ -13,3 +13,13 @@ import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/react-web/lib/
 export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
 }
+
+import TdfUserButton from '../components/clerktdf/tdf-userbutton';
+
+registerComponent(TdfUserButton, 
+  {
+    name: 'Clerk TDF User Button',
+    props: {},
+    importPath: '../components/clerktdf/tdf-userbutton'
+  }
+);
