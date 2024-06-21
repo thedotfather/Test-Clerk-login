@@ -3,9 +3,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { ensurePlasmicAppUser } from '@plasmicapp/auth-api';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
-  }
+//   if (req.method !== 'POST') {
+//     return res.status(405).json({ error: 'Method Not Allowed' });
+//   }
 
   const { userId, targEmail } = req.body;
 
