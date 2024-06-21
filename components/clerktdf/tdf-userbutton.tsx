@@ -5,9 +5,13 @@ const TdfUserButton = () => {
   return (
     <div>
         <SignedIn>
-            {/* Mount the UserButton component */}
-            <UserButton />
+          {/* Mount the UserButton component */}
+          <UserButton />
         </SignedIn>
+        <SignedOut>
+          {/* Signed out users get sign in button */}
+          <SignInButton/>
+        </SignedOut>
     </div>
   );
 }
