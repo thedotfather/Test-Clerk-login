@@ -12,10 +12,11 @@ const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
-  const targResult = ExecuteEnsurePlasmicAppUser();
-
+  
+  
   return (
     <ClerkProvider publishableKey={publishableKey}>
+      const targResult = ExecuteEnsurePlasmicAppUser();
       <PlasmicRootProvider Head={Head}>
       
           <Component {...pageProps}/>
