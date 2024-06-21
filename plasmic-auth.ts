@@ -13,10 +13,16 @@ export async function ExecuteEnsurePlasmicAppUser() {
         return null;
     }
 
-    return await ensurePlasmicAppUser({
+    let targEmail = user.emailAddresses[0].emailAddress;
+    console.log("ExecuteEnsurePlasmicAppUser:  targEmail: " + targEmail);
+    console.log("ExecuteEnsurePlasmicAppUser:  plasmicAppSecret: " + plasmicAppSecret);
+
+     await ensurePlasmicAppUser({
         email: user.emailAddresses[0].emailAddress,
         appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
     });
+
+    return null;
 }
 
 // export async function getPlasmicAppUserToken() {
