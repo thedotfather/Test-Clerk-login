@@ -74,6 +74,12 @@
           "name": "Fetcher",
           "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "1gO4Qc29jqCz",
+          "name": "Clerk TDF User Button",
+          "displayName": "Clerk TDF User Button",
+          "componentImportPath": "./components/clerktdf/tdf-userbutton"
         }
       ],
       "customFunctions": []
