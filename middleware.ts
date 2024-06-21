@@ -14,7 +14,7 @@ export default clerkMiddleware((auth, request) => {
   if(auth().userId){
     
     console.log("Running ExecuteEnsurePlasmicAppUser...");
-    ExecuteEnsurePlasmicAppUser();
+    const targResult = ExecuteEnsurePlasmicAppUser();
 
   }
 });
