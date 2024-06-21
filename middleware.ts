@@ -5,6 +5,7 @@ const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmi
 export default clerkMiddleware((auth, request) => {
   if(!isPublicRoute(request)) {
     auth().protect();
+    
   }
 });
 

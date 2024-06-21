@@ -16,17 +16,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlasmicRootProvider Head={Head}>
       <ClerkProvider publishableKey={publishableKey}>
-        <div>
-          <SignedIn>
-            {/* Mount the UserButton component */}
-            <UserButton />
-          </SignedIn>
-          <SignedOut>
-            {/* Signed out users get sign in button */}
-            <SignInButton/>
-          </SignedOut>
-        </div>
-
         
           <Component {...pageProps} />
         
