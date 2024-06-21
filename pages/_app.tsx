@@ -16,8 +16,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <PlasmicRootProvider Head={Head}>
       <ClerkProvider publishableKey={publishableKey}>
-        <header style={{ display: "flex", justifyContent: "space-between", padding: 20 }}>
-          <h1>My App</h1>
+        <div>
           <SignedIn>
             {/* Mount the UserButton component */}
             <UserButton />
@@ -26,7 +25,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             {/* Signed out users get sign in button */}
             <SignInButton/>
           </SignedOut>
-        </header>
+        </div>
 
         
           <Component {...pageProps} />
