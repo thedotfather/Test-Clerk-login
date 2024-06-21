@@ -1,6 +1,6 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmic-hostname(.*)']);
+const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmic-host(.*)']);
 
 export default clerkMiddleware((auth, request) => {
   if(!isPublicRoute(request)) {
