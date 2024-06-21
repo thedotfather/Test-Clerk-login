@@ -7,11 +7,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 //     return res.status(405).json({ error: 'Method Not Allowed' });
 //   }
 
-  const { userId, targEmail } = req.body;
+//   const { userId, targEmail } = req.body;
 
-  if (!userId) {
-    return res.status(400).json({ error: 'Missing userId' });
-  }
+//   if (!userId) {
+//     return res.status(400).json({ error: 'Missing userId' });
+//   }
 
   try {
     const result = await ensurePlasmicAppUser({
