@@ -15,22 +15,22 @@ export async function ExecuteEnsurePlasmicAppUser() {
     return null;
 
 
-    const { isLoaded, isSignedIn, user } = useUser();
+    // const { isLoaded, isSignedIn, user } = useUser();
 
-    if (!isLoaded || !isSignedIn) {
-        return null;
-    }
+    // if (!isLoaded || !isSignedIn) {
+    //     return null;
+    // }
 
-    let targEmail = user.emailAddresses[0].emailAddress;
-    console.log("ExecuteEnsurePlasmicAppUser:  targEmail: " + targEmail);
-    console.log("ExecuteEnsurePlasmicAppUser:  plasmicAppSecret: " + plasmicAppSecret);
+    // let targEmail = user.emailAddresses[0].emailAddress;
+    // console.log("ExecuteEnsurePlasmicAppUser:  targEmail: " + targEmail);
+    // console.log("ExecuteEnsurePlasmicAppUser:  plasmicAppSecret: " + plasmicAppSecret);
 
-     await ensurePlasmicAppUser({
-        email: user.emailAddresses[0].emailAddress,
-        appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
-    });
+    //  await ensurePlasmicAppUser({
+    //     email: user.emailAddresses[0].emailAddress,
+    //     appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
+    // });
 
-    return null;
+    // return null;
 }
 
 // export async function getPlasmicAppUserToken() {
