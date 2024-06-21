@@ -3,10 +3,12 @@ import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@c
 
 const TdfUserButton = () => {
   return (
-    <SignedIn>
-        {/* Mount the UserButton component */}
-        <UserButton />
-    </SignedIn>
+    <div>
+        <SignedIn>
+            {/* Mount the UserButton component */}
+            <UserButton />
+        </SignedIn>
+    </div>
   );
 }
 
