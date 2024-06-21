@@ -6,10 +6,14 @@ import {ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton} from '@cle
 
 import { getPlasmicAppUserFromToken } from '@plasmicapp/auth-api';
 import { useAuth } from '@clerk/nextjs';
+import { ExecuteEnsurePlasmicAppUser } from '@/plasmic-auth';
 
 const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+
+  const targResult = ExecuteEnsurePlasmicAppUser();
+
   return (
     <ClerkProvider publishableKey={publishableKey}>
       <PlasmicRootProvider Head={Head}>
