@@ -1,6 +1,7 @@
+"use client";
 import { ensurePlasmicAppUser, getPlasmicAppUserFromToken } from '@plasmicapp/auth-api';
 import { useAuth, useUser } from '@clerk/nextjs'; // Assuming you're using Clerk for auth
-"use client";
+
 
 const plasmicAppSecret = process.env.PLASMIC_APP_SECRET;
 
