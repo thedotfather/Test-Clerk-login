@@ -7,10 +7,15 @@ const plasmicAppSecret = process.env.PLASMIC_APP_SECRET;
 
 export async function ExecuteEnsurePlasmicAppUser() {
 
+    console.log("ExecuteEnsurePlasmicAppUser:  plasmicAppSecret: " + plasmicAppSecret);
+    console.log('before ensurePlasmicAppUser');
+
     await ensurePlasmicAppUser({
         email: 'stijn@thedotfather.be',
         appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
     });
+
+    console.log('after ensurePlasmicAppUser');
 
     return null;
 
