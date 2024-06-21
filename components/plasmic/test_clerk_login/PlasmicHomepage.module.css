@@ -58,3 +58,10 @@
   margin-bottom: 32px;
   min-width: 0;
 }
+.text {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
