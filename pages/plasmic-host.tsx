@@ -19,7 +19,12 @@ import TdfUserButton from '../components/clerktdf/tdf-userbutton';
 registerComponent(TdfUserButton, 
   {
     name: 'clerkUserButton',
-    props: {},
+    props: {
+      showName: { 
+        displayName: 'Show Name',
+        type: 'boolean', 
+        defaultValue: true}
+    },
     importPath: './components/clerktdf/tdf-userbutton'
   }
 );
