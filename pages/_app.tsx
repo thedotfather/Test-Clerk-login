@@ -42,8 +42,8 @@ function PlasmicRootWrapperWithAuth({ children }: { children: React.ReactNode })
           if (!response.ok) {
             throw new Error('Failed to get Plasmic user');
           }
-          const data = await response.json();
-          setPlasmicUser(data);
+          //const data = await response.json();
+          //setPlasmicUser(data);
         } catch (error) {
           console.error('Error fetching Plasmic user:', error);
         }
