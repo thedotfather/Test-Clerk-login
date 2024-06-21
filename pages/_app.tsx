@@ -33,7 +33,7 @@ async function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) 
   //const { isUserLoading, plasmicUser, plasmicUserToken } = usePlasmicAuthData();
   //const targResult = ExecuteEnsurePlasmicAppUser();
 
-  const response = await fetch('/api/plasmic-auth-sr');
+  const response = await fetch('/api/authApi');
   if (!response.ok) {
     throw new Error('Failed to get Plasmic user');
   }
