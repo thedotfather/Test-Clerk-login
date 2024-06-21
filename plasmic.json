@@ -41,6 +41,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/"
+        },
+        {
+          "id": "mnzamsirDgt2",
+          "name": "Login",
+          "type": "managed",
+          "projectId": "ryigQvYu19ygnoy3uho1cD",
+          "renderModuleFilePath": "plasmic/test_clerk_login/PlasmicLogin.tsx",
+          "importSpec": {
+            "modulePath": "../pages/login.tsx"
+          },
+          "cssFilePath": "plasmic/test_clerk_login/PlasmicLogin.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/login"
         }
       ],
       "icons": [],
