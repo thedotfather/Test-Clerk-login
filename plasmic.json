@@ -1,0 +1,84 @@
+{
+  "platform": "nextjs",
+  "code": {
+    "lang": "ts",
+    "scheme": "blackbox",
+    "reactRuntime": "classic"
+  },
+  "style": {
+    "scheme": "css-modules",
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+  },
+  "images": {
+    "scheme": "public-files",
+    "publicDir": "../public",
+    "publicUrlPrefix": "/"
+  },
+  "tokens": {
+    "scheme": "theo",
+    "tokensFilePath": "plasmic-tokens.theo.json"
+  },
+  "srcDir": "components",
+  "defaultPlasmicDir": "./plasmic",
+  "projects": [
+    {
+      "projectId": "ryigQvYu19ygnoy3uho1cD",
+      "projectApiToken": "Rvz0nDC4uUMUJ1CfxXwNDcvHd81nJPzSYQObSs0IZu5pW1dX3rlWAXLxSn1aBcNw2iu9dchgKURSSPIH0smw",
+      "projectName": "Test Clerk login",
+      "version": "latest",
+      "cssFilePath": "plasmic/test_clerk_login/plasmic.module.css",
+      "components": [
+        {
+          "id": "JjnjqRD_H8EA",
+          "name": "Homepage",
+          "type": "managed",
+          "projectId": "ryigQvYu19ygnoy3uho1cD",
+          "renderModuleFilePath": "plasmic/test_clerk_login/PlasmicHomepage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/index.tsx"
+          },
+          "cssFilePath": "plasmic/test_clerk_login/PlasmicHomepage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/"
+        }
+      ],
+      "icons": [],
+      "images": [],
+      "indirect": false,
+      "globalContextsFilePath": "",
+      "splitsProviderFilePath": "",
+      "codeComponents": [
+        {
+          "id": "jy2viQoEXdRc",
+          "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
+          "componentImportPath": "@plasmicapp/react-web"
+        },
+        {
+          "id": "bcDe1XOc1HXq",
+          "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
+          "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        }
+      ],
+      "customFunctions": []
+    }
+  ],
+  "globalVariants": {
+    "variantGroups": [
+      {
+        "id": "vH68WipUZ0tj",
+        "name": "Screen",
+        "projectId": "ryigQvYu19ygnoy3uho1cD",
+        "contextFilePath": "plasmic/test_clerk_login/PlasmicGlobalVariant__Screen.tsx"
+      }
+    ]
+  },
+  "wrapPagesWithGlobalContexts": true,
+  "nextjsConfig": {
+    "pagesDir": "../pages"
+  },
+  "cliVersion": "0.1.330",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.330/dist/plasmic.schema.json"
+}
