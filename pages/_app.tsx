@@ -16,12 +16,25 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   
   return (
     <ClerkProvider publishableKey={publishableKey}>
-      const targResult = ExecuteEnsurePlasmicAppUser();
-      <PlasmicRootProvider Head={Head}>
       
-          <Component {...pageProps}/>
+      <PlasmicRootWrapperWithAuth>
+        <PlasmicRootProvider Head={Head}>
+        
+            <Component {...pageProps}/>
 
-      </PlasmicRootProvider>
+        </PlasmicRootProvider>
+      </PlasmicRootWrapperWithAuth>
+      
     </ClerkProvider>
+  );
+}
+
+function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) {
+  //const { isUserLoading, plasmicUser, plasmicUserToken } = usePlasmicAuthData();
+  const targResult = ExecuteEnsurePlasmicAppUser();
+  return (
+    <div>
+      {props.children}
+    </div>
   );
 }
