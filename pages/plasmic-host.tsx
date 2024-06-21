@@ -18,7 +18,7 @@ import TdfUserButton from '../components/clerktdf/tdf-userbutton';
 
 registerComponent(TdfUserButton, 
   {
-    name: 'Clerk TDF User Button',
+    name: 'clerkUserButton',
     props: {},
     importPath: './components/clerktdf/tdf-userbutton'
   }
