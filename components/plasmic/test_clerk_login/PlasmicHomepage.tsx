@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { clerkUserButton } from "../../clerktdf/tdf-userbutton"; // plasmic-import: utsaHgwz9FL1/codeComponent
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: ryigQvYu19ygnoy3uho1cD/projectcss
@@ -77,6 +79,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
+  clerkUserButton?: Flex__<typeof clerkUserButton>;
   h1?: Flex__<"h1">;
   text?: Flex__<"div">;
 };
@@ -137,8 +140,13 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___8Qdfh)} />
-
+          <div className={classNames(projectcss.all, sty.freeBox___8Qdfh)}>
+            <clerkUserButton
+              data-plasmic-name={"clerkUserButton"}
+              data-plasmic-override={overrides.clerkUserButton}
+              className={classNames("__wab_instance", sty.clerkUserButton)}
+            />
+          </div>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
             <h1
               data-plasmic-name={"h1"}
@@ -171,7 +179,8 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "h1", "text"],
+  root: ["root", "clerkUserButton", "h1", "text"],
+  clerkUserButton: ["clerkUserButton"],
   h1: ["h1"],
   text: ["text"]
 } as const;
@@ -180,6 +189,7 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
+  clerkUserButton: typeof clerkUserButton;
   h1: "h1";
   text: "div";
 };
@@ -244,6 +254,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    clerkUserButton: makeNodeComponent("clerkUserButton"),
     h1: makeNodeComponent("h1"),
     text: makeNodeComponent("text"),
 
