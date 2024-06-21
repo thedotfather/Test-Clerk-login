@@ -24,14 +24,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
         </PlasmicRootProvider>
       </PlasmicRootWrapperWithAuth>
-      
+
     </ClerkProvider>
   );
 }
 
-function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) {
+async function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) {
   //const { isUserLoading, plasmicUser, plasmicUserToken } = usePlasmicAuthData();
-  const targResult = ExecuteEnsurePlasmicAppUser();
+  //const targResult = ExecuteEnsurePlasmicAppUser();
+
+  const response = await fetch('/api/plasmic-auth-sr');
+  if (!response.ok) {
+    throw new Error('Failed to get Plasmic user');
+  }
+
   return (
     <div>
       {props.children}
