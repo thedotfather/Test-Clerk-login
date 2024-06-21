@@ -10,9 +10,11 @@ import {
   UserButton
 } from '@clerk/nextjs';
 
+const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ClerkProvider>
+    <ClerkProvider publishableKey={publishableKey}>
       <PlasmicRootProvider Head={Head}>
         <Component {...pageProps} />
       </PlasmicRootProvider>
