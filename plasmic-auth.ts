@@ -10,10 +10,17 @@ export async function ExecuteEnsurePlasmicAppUser() {
     console.log("ExecuteEnsurePlasmicAppUser:  plasmicAppSecret: " + plasmicAppSecret);
     console.log('before ensurePlasmicAppUser');
 
-    await ensurePlasmicAppUser({
+    const result = await ensurePlasmicAppUser({
         email: 'stijn@thedotfather.be',
         appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
     });
+
+    if (result.error) {
+        // Error handling
+        console.error(result.error);
+    };
+    
+    const { user: plasmicUser, token: plasmicUserToken } = result;
 
     console.log('after ensurePlasmicAppUser');
 
