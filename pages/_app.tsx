@@ -14,41 +14,45 @@ const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 
-  useEnsurePlasmicUser();
+  
   
   return (
     <ClerkProvider publishableKey={publishableKey} {...pageProps}>
+      <PlasmicRootWrapperWithAuth>
         <PlasmicRootProvider Head={Head}>
         
             <Component {...pageProps}/>
 
         </PlasmicRootProvider>
+      </PlasmicRootWrapperWithAuth>
     </ClerkProvider>
   );
 }
 
 function PlasmicRootWrapperWithAuth({ children }: { children: React.ReactNode }) {
-  const { isLoaded, userId } = useAuth();
-  const [plasmicUser, setPlasmicUser] = useState(null);
+  // const { isLoaded, userId } = useAuth();
+  // const [plasmicUser, setPlasmicUser] = useState(null);
 
-  useEffect(() => {
-    async function fetchPlasmicUser() {
-      if (isLoaded && userId) {
-        try {
-          const response = await fetch('/api/authApi');
-          if (!response.ok) {
-            throw new Error('Failed to get Plasmic user');
-          }
-          //const data = await response.json();
-          //setPlasmicUser(data);
-        } catch (error) {
-          console.error('Error fetching Plasmic user:', error);
-        }
-      }
-    }
+  // useEffect(() => {
+  //   async function fetchPlasmicUser() {
+  //     if (isLoaded && userId) {
+  //       try {
+  //         const response = await fetch('/api/authApi');
+  //         if (!response.ok) {
+  //           throw new Error('Failed to get Plasmic user');
+  //         }
+  //         //const data = await response.json();
+  //         //setPlasmicUser(data);
+  //       } catch (error) {
+  //         console.error('Error fetching Plasmic user:', error);
+  //       }
+  //     }
+  //   }
 
-    fetchPlasmicUser();
-  }, [isLoaded, userId]);
+  //   fetchPlasmicUser();
+  // }, [isLoaded, userId]);
+
+  useEnsurePlasmicUser();
 
   return (
     <div>
