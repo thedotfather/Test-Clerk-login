@@ -147,6 +147,7 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-name={"clerkUserButton"}
               data-plasmic-override={overrides.clerkUserButton}
               className={classNames("__wab_instance", sty.clerkUserButton)}
+              showName={true}
             />
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
