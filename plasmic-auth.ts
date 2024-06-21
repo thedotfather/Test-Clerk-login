@@ -7,6 +7,14 @@ const plasmicAppSecret = process.env.PLASMIC_APP_SECRET;
 
 export async function ExecuteEnsurePlasmicAppUser() {
 
+    await ensurePlasmicAppUser({
+        email: 'stijn@thedotfather.be',
+        appSecret: plasmicAppSecret === undefined ? "" : plasmicAppSecret
+    });
+
+    return null;
+
+
     const { isLoaded, isSignedIn, user } = useUser();
 
     if (!isLoaded || !isSignedIn) {
