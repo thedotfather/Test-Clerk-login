@@ -19,6 +19,7 @@ export default clerkMiddleware((auth, request) => {
     const targResult = ExecuteEnsurePlasmicAppUser();
 
   }
+  console.log("middleware: end...");
 });
 
 export const config = {
