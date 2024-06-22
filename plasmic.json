@@ -111,7 +111,7 @@
         {
           "defaultExport": false,
           "id": "clerkLogout2",
-          "importPath": "./utils/clerkLogoutAction",
+          "importPath": "./functions/clerkLogoutAction",
           "name": "clerkLogout2",
           "namespace": null
         }
