@@ -7,3 +7,7 @@ export function useClerkLogout(){
         await signOut();
     };
 }
+
+export function testFunction(){
+    console.log('testFunction run');
+}

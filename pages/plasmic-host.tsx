@@ -36,3 +36,10 @@ registerFunction(useClerkLogout, {
   importPath: './functions/clerkLogoutAction'
 });
 //test
+
+import { testFunction } from '../functions/clerkLogoutAction';
+
+registerFunction(testFunction, {
+  name: 'testFunction',
+  importPath: './functions/clerkLogoutAction'
+});
