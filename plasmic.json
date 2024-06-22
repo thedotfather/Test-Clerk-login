@@ -107,10 +107,10 @@
           "componentImportPath": "./components/clerktdf/tdf-userbutton"
         },
         {
-          "id": "isFSHM3lJGWx",
-          "name": "LogoutWrapper",
-          "displayName": "LogoutWrapper",
-          "componentImportPath": "./components/logoutWrapper"
+          "id": "1Cy4KmX8hEfh",
+          "name": "ClerkSignOutButton",
+          "displayName": "ClerkSignOutButton",
+          "componentImportPath": "./components/logoutButtonClerk"
         }
       ],
       "customFunctions": [
@@ -119,13 +119,6 @@
           "id": "testFunction",
           "importPath": "./functions/clerkLogoutAction",
           "name": "testFunction",
-          "namespace": null
-        },
-        {
-          "defaultExport": false,
-          "id": "clerkLogout3",
-          "importPath": "./functions/clerkLogoutAction",
-          "name": "clerkLogout3",
           "namespace": null
         }
       ]
