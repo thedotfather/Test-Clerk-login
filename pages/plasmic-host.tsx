@@ -35,3 +35,4 @@ registerFunction(useClerkLogout, {
   name: 'clerkLogout2',
   importPath: './functions/clerkLogoutAction'
 });
+//test
