@@ -7,7 +7,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 //     return res.status(405).json({ error: 'Method Not Allowed' });
 //   }
 
-//   const { userId, targEmail } = req.body;
+    // const { userId, targEmail } = req.body;
+    const targEmail = req.body.email;
+    console.log("pages/api/auth/ensurePlasmicUser.ts:   targEmail: " + targEmail);
 
 //   if (!userId) {
 //     return res.status(400).json({ error: 'Missing userId' });

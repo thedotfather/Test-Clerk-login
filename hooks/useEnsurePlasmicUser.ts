@@ -21,7 +21,7 @@ export const useEnsurePlasmicUser = () => {
           });
 
           if (!response.ok) {
-            throw new Error('Failed to ensure Plasmic user');
+            throw new Error('hooks/useEnsurePlasmicUser.ts:  Failed to ensure Plasmic user');
           }
         } catch (error) {
           console.error(error);
