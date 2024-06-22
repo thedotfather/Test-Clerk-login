@@ -58,7 +58,7 @@
   object-fit: cover;
   position: relative;
 }
-.button:global(.__wab_instance) {
+.button__ehe3K:global(.__wab_instance) {
   max-width: 100%;
   position: relative;
 }
@@ -73,6 +73,27 @@
   font-size: 14px;
 }
 .svg__rPLh {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.logoutWrapper:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.button__vEvP:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__qfGzZ {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__fjl1A {
   position: relative;
   object-fit: cover;
   width: auto;

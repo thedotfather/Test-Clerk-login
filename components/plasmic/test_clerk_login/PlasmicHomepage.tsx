@@ -61,6 +61,7 @@ import {
 
 import { clerkUserButton } from "../../clerktdf/tdf-userbutton"; // plasmic-import: utsaHgwz9FL1/codeComponent
 import Button from "../../Button"; // plasmic-import: nPwEx6GLwm-X/component
+import { LogoutWrapper } from "../../logoutWrapper"; // plasmic-import: isFSHM3lJGWx/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -86,7 +87,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
-  button?: Flex__<typeof Button>;
+  logoutWrapper?: Flex__<typeof LogoutWrapper>;
   h1?: Flex__<"h1">;
 };
 
@@ -163,9 +164,7 @@ function PlasmicHomepage__RenderFunc(props: {
             />
 
             <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
+              className={classNames("__wab_instance", sty.button__ehe3K)}
               onClick={async event => {
                 const $steps = {};
 
@@ -202,6 +201,17 @@ function PlasmicHomepage__RenderFunc(props: {
                 {"Test function"}
               </div>
             </Button>
+            <LogoutWrapper
+              data-plasmic-name={"logoutWrapper"}
+              data-plasmic-override={overrides.logoutWrapper}
+              className={classNames("__wab_instance", sty.logoutWrapper)}
+            >
+              <Button
+                className={classNames("__wab_instance", sty.button__vEvP)}
+              >
+                {"Test log out"}
+              </Button>
+            </LogoutWrapper>
           </Stack__>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
             <h1
@@ -233,9 +243,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "clerkUserButton", "button", "h1"],
+  root: ["root", "clerkUserButton", "logoutWrapper", "h1"],
   clerkUserButton: ["clerkUserButton"],
-  button: ["button"],
+  logoutWrapper: ["logoutWrapper"],
   h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -244,7 +254,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   clerkUserButton: typeof clerkUserButton;
-  button: typeof Button;
+  logoutWrapper: typeof LogoutWrapper;
   h1: "h1";
 };
 
@@ -309,7 +319,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     clerkUserButton: makeNodeComponent("clerkUserButton"),
-    button: makeNodeComponent("button"),
+    logoutWrapper: makeNodeComponent("logoutWrapper"),
     h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicHomepage
