@@ -1,6 +1,6 @@
 import { useClerk } from '@clerk/clerk-react';
 
-export async function ClerkLogout(){
+export function ClerkLogout(){
     const { signOut } = useClerk();
 
     return async function() {
