@@ -87,6 +87,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
+  button?: Flex__<typeof Button>;
   logoutWrapper?: Flex__<typeof LogoutWrapper>;
   h1?: Flex__<"h1">;
 };
@@ -164,7 +165,9 @@ function PlasmicHomepage__RenderFunc(props: {
             />
 
             <Button
-              className={classNames("__wab_instance", sty.button__ehe3K)}
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
               onClick={async event => {
                 const $steps = {};
 
@@ -206,44 +209,15 @@ function PlasmicHomepage__RenderFunc(props: {
               data-plasmic-override={overrides.logoutWrapper}
               className={classNames("__wab_instance", sty.logoutWrapper)}
             >
-              <Button
-                className={classNames("__wab_instance", sty.button__yNygr)}
-                onClick={async event => {
-                  const $steps = {};
-
-                  $steps["runCode"] = true
-                    ? (() => {
-                        const actionArgs = {
-                          customFunction: async () => {
-                            return (() => {
-                              return console.log("Ran logout");
-                            })();
-                          }
-                        };
-                        return (({ customFunction }) => {
-                          return customFunction();
-                        })?.apply(null, [actionArgs]);
-                      })()
-                    : undefined;
-                  if (
-                    $steps["runCode"] != null &&
-                    typeof $steps["runCode"] === "object" &&
-                    typeof $steps["runCode"].then === "function"
-                  ) {
-                    $steps["runCode"] = await $steps["runCode"];
-                  }
-                }}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__t8ZBz
+                )}
               >
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__n8I3
-                  )}
-                >
-                  {"Logout"}
-                </div>
-              </Button>
+                {"Logout"}
+              </div>
             </LogoutWrapper>
           </Stack__>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
@@ -276,8 +250,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "clerkUserButton", "logoutWrapper", "h1"],
+  root: ["root", "clerkUserButton", "button", "logoutWrapper", "h1"],
   clerkUserButton: ["clerkUserButton"],
+  button: ["button"],
   logoutWrapper: ["logoutWrapper"],
   h1: ["h1"]
 } as const;
@@ -287,6 +262,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   clerkUserButton: typeof clerkUserButton;
+  button: typeof Button;
   logoutWrapper: typeof LogoutWrapper;
   h1: "h1";
 };
@@ -352,6 +328,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     clerkUserButton: makeNodeComponent("clerkUserButton"),
+    button: makeNodeComponent("button"),
     logoutWrapper: makeNodeComponent("logoutWrapper"),
     h1: makeNodeComponent("h1"),
 
