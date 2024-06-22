@@ -70,7 +70,7 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JjnjqRD_H8EA/
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
 
-import { clerkLogout as __fn_clerkLogout } from "../../../functions/clerkLogoutAction"; // plasmic-import: clerkLogout/customFunction
+import { clerkLogout2 as __fn_clerkLogout2 } from "../../../utils/clerkLogoutAction"; // plasmic-import: clerkLogout2/customFunction
 
 createPlasmicElementProxy;
 
@@ -93,7 +93,7 @@ export type PlasmicHomepage__OverridesType = {
 export interface DefaultHomepageProps {}
 
 const $$ = {
-  clerkLogout: __fn_clerkLogout
+  clerkLogout2: __fn_clerkLogout2
 };
 
 function useNextRouter() {
@@ -173,7 +173,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   ? (() => {
                       const actionArgs = {
                         customFunction: async () => {
-                          return $$.clerkLogout();
+                          return $$.clerkLogout2();
                         }
                       };
                       return (({ customFunction }) => {
