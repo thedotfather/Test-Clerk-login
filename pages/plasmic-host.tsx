@@ -29,27 +29,29 @@ registerComponent(TdfUserButton,
   }
 );
 
-import LogoutWrapper from '../components/logoutWrapper';
+import ClerkSignOutButton from '../components/logoutButtonClerk';
 
-registerComponent(LogoutWrapper, 
-  {
-    name: 'LogoutWrapper',
-    props: {
-      children: 'slot'
+registerComponent(ClerkSignOutButton, {
+  name: 'ClerkSignOutButton',
+  props: {
+    redirectUrl: {
+      type: 'string',
+      displayName: 'Redirect URL',
+      description: 'The URL to redirect to after sign out'
     },
-    importPath: './components/logoutWrapper'
-  }
-);
-
-
-import { ClerkLogout } from '../functions/clerkLogoutAction';
-
-registerFunction(ClerkLogout, {
-  name: 'clerkLogout3',
-  importPath: './functions/clerkLogoutAction',
-  isDefaultExport: false
+    sessionId: {
+      type: 'string',
+      displayName: 'Session ID',
+      description: 'The ID of a specific session to sign out of'
+    },
+    children: {
+      type: 'slot',
+      displayName: 'Children',
+      description: 'Content to display inside the button'
+    }
+  },
+  importPath: './components/logoutButtonClerk'
 });
-//test
 
 import { testFunction } from '../functions/clerkLogoutAction';
 
