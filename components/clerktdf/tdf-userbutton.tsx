@@ -11,16 +11,9 @@ export const TdfUserButton: React.FC<TdfUserButtonProps> = (
     }) => {
   return (
     <div>
-        <SignedIn>
-          {/* Mount the UserButton component */}
           <UserButton
             showName={showName}
           />
-        </SignedIn>
-        <SignedOut>
-          {/* Signed out users get sign in button */}
-          <SignInButton/>
-        </SignedOut>
     </div>
   );
 }
