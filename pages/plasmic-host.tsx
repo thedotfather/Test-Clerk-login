@@ -33,5 +33,5 @@ import { useClerkLogout } from '../functions/clerkLogoutAction';
 
 registerFunction(useClerkLogout, {
   name: 'clerkLogout2',
-  importPath: './utils/clerkLogoutAction'
+  importPath: './functions/clerkLogoutAction'
 });
