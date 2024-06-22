@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PlasmicCanvasHost, registerComponent } from '@plasmicapp/react-web/lib/host';
+import { PlasmicCanvasHost, registerComponent, registerFunction } from '@plasmicapp/react-web/lib/host';
 
 // You can register any code components that you want to use here; see
 // https://docs.plasmic.app/learn/code-components-ref/
@@ -28,3 +28,10 @@ registerComponent(TdfUserButton,
     importPath: './components/clerktdf/tdf-userbutton'
   }
 );
+
+import { ClerkLogout } from '@/utils/clerkLogoutAction';
+
+registerFunction(ClerkLogout, {
+  name: 'clerkLogout',
+  importPath: './utils/clerkLogoutAction'
+});
