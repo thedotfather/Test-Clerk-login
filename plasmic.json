@@ -110,9 +110,9 @@
       "customFunctions": [
         {
           "defaultExport": false,
-          "id": "clerkLogout",
+          "id": "clerkLogout2",
           "importPath": "./utils/clerkLogoutAction",
-          "name": "clerkLogout",
+          "name": "clerkLogout2",
           "namespace": null
         }
       ]
