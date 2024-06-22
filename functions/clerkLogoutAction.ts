@@ -1,11 +1,11 @@
 import { useClerk } from '@clerk/clerk-react';
 
-export function useClerkLogout(){
-    const { signOut } = useClerk();
-
+export function clerkLogout(){
+    
     return async function() {
+        const { signOut } = useClerk();
         await signOut();
-    };
+    }();
 }
 
 export function testFunction(){
