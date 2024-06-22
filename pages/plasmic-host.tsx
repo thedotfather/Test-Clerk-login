@@ -34,8 +34,10 @@ import { ClerkLogoutWrapper } from '../components/clerktdf/tdf-clerkLogoutWrappe
 registerComponent(ClerkLogoutWrapper, 
   {
     name: 'clerkLogoutWrapper',
-    props: {},
-    importPath: './components/clerktdf/tdf-clerkLogoutWrapper'
+    props: {
+      children: 'slot'
+    },
+    importPath: './components/clerktdf/Tdf-clerkLogoutWrapper'
   }
 );
 
