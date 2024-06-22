@@ -70,8 +70,6 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JjnjqRD_H8EA/
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
 
-import { clerkLogout2 as __fn_clerkLogout2 } from "../../../utils/clerkLogoutAction"; // plasmic-import: clerkLogout2/customFunction
-
 createPlasmicElementProxy;
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -92,9 +90,7 @@ export type PlasmicHomepage__OverridesType = {
 
 export interface DefaultHomepageProps {}
 
-const $$ = {
-  clerkLogout2: __fn_clerkLogout2
-};
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -168,26 +164,6 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames("__wab_instance", sty.button)}
               onClick={async event => {
                 const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return $$.clerkLogout2();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
               }}
             >
               <div
