@@ -239,6 +239,84 @@ function PlasmicHomepage__RenderFunc(props: {
             >
               {"Dit is een test. 4"}
             </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__bIkan
+              )}
+            >
+              {"Logged in user details:"}
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__rrQyE
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return "isLoggedIn =  " + currentUser.isLoggedIn;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "Logged in user details:";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text___1Gp5L
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return "email =  " + currentUser.email;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "Logged in user details:";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__y6H9L
+              )}
+            >
+              <React.Fragment>
+                {(() => {
+                  try {
+                    return "roleName =  " + currentUser.roleName;
+                  } catch (e) {
+                    if (
+                      e instanceof TypeError ||
+                      e?.plasmicType === "PlasmicUndefinedDataError"
+                    ) {
+                      return "Logged in user details:";
+                    }
+                    throw e;
+                  }
+                })()}
+              </React.Fragment>
+            </div>
           </div>
         </div>
       </div>
