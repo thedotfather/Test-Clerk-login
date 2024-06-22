@@ -29,7 +29,7 @@ registerComponent(TdfUserButton,
   }
 );
 
-import { useClerkLogout } from '../utils/clerkLogoutAction';
+import { useClerkLogout } from '../functions/clerkLogoutAction';
 
 registerFunction(useClerkLogout, {
   name: 'clerkLogout',

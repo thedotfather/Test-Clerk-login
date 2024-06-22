@@ -70,7 +70,7 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JjnjqRD_H8EA/
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
 
-import { clerkLogout as __fn_clerkLogout } from "../../../utils/clerkLogoutAction"; // plasmic-import: clerkLogout/customFunction
+import { clerkLogout as __fn_clerkLogout } from "../../../functions/clerkLogoutAction"; // plasmic-import: clerkLogout/customFunction
 
 createPlasmicElementProxy;
 
