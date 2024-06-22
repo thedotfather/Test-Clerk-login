@@ -29,15 +29,15 @@ registerComponent(TdfUserButton,
   }
 );
 
-import ClerkLogoutWrapper from '../components/clerktdf/tdf-clerkLogoutWrapper';
+import LogoutWrapper from '../components/logoutWrapper';
 
-registerComponent(ClerkLogoutWrapper, 
+registerComponent(LogoutWrapper, 
   {
-    name: 'clerkLogoutWrapper',
+    name: 'LogoutWrapper',
     props: {
       children: 'slot'
     },
-    importPath: './components/clerktdf/tdf-clerkLogoutWrapper'
+    importPath: './components/logoutWrapper'
   }
 );
 
