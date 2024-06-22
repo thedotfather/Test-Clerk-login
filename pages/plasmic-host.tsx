@@ -29,7 +29,7 @@ registerComponent(TdfUserButton,
   }
 );
 
-import ClerkSignOutButton from '../components/logoutButtonClerk';
+import { ClerkSignOutButton } from '../components/logoutButtonClerk';
 
 registerComponent(ClerkSignOutButton, {
   name: 'ClerkSignOutButton',
