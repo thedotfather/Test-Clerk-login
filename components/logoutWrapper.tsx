@@ -19,10 +19,14 @@ const LogoutWrapper: React.FC<LogoutWrapperProps> = (
         children
     }) => {
   return (
-    <div onClick={useClerkLogout}>
+    <div>
       {children}
     </div>
   );
 }
 
 export default LogoutWrapper;
+
+{/* <div onClick={useClerkLogout}>
+      {children}
+    </div> */}
