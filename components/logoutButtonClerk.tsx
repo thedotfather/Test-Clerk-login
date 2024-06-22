@@ -14,3 +14,4 @@ export const ClerkSignOutButton: React.FC<ClerkSignOutButtonProps> = ({ redirect
     </SignOutButton>
   );
 };
+ 
