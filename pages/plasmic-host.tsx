@@ -29,6 +29,17 @@ registerComponent(TdfUserButton,
   }
 );
 
+import { ClerkLogoutWrapper } from '../components/clerktdf/tdf-clerkLogoutWrapper';
+
+registerComponent(ClerkLogoutWrapper, 
+  {
+    name: 'clerkLogoutWrapper',
+    props: {},
+    importPath: './components/clerktdf/tdf-clerkLogoutWrapper'
+  }
+);
+
+
 import { ClerkLogout } from '../functions/clerkLogoutAction';
 
 registerFunction(ClerkLogout, {
