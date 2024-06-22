@@ -53,6 +53,15 @@ registerComponent(ClerkSignOutButton, {
   importPath: './components/logoutButtonClerk'
 });
 
+import { ClerkSignInWrapper } from '@/components/clerktdf/clerkSignInWrapper';
+
+registerComponent(ClerkSignInWrapper, {
+  name: 'ClerkSignInWrapper',
+  props: {
+  },
+  importPath: './components/clerktdf/clerkSignInWrapper'
+});
+
 import { testFunction } from '../functions/clerkLogoutAction';
 
 registerFunction(testFunction, {
