@@ -1,10 +1,8 @@
-import React from 'react';
 import { useEffect } from 'react';
-import { useClerkLogout } from '@/hooks/useClerkLogout';
 import { useClerk } from '@clerk/clerk-react';
 
-export function ClerkLogout(){
-    
+export const useClerkLogout = () => {
+
     const { signOut } = useClerk();
   
     useEffect(() => {
@@ -14,10 +12,4 @@ export function ClerkLogout(){
 
         doClerkLogout();
     }, [signOut]);
-
-    return null;
-}
-
-export function testFunction(){
-    console.log('testFunction run');
-}
+};
