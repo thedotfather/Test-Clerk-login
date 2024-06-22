@@ -110,16 +110,16 @@
       "customFunctions": [
         {
           "defaultExport": false,
-          "id": "clerkLogout2",
+          "id": "testFunction",
           "importPath": "./functions/clerkLogoutAction",
-          "name": "clerkLogout2",
+          "name": "testFunction",
           "namespace": null
         },
         {
           "defaultExport": false,
-          "id": "testFunction",
+          "id": "clerkLogout3",
           "importPath": "./functions/clerkLogoutAction",
-          "name": "testFunction",
+          "name": "clerkLogout3",
           "namespace": null
         }
       ]
