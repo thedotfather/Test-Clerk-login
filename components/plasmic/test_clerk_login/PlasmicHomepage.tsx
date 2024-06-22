@@ -60,11 +60,17 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { clerkUserButton } from "../../clerktdf/tdf-userbutton"; // plasmic-import: utsaHgwz9FL1/codeComponent
+import Button from "../../Button"; // plasmic-import: nPwEx6GLwm-X/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: ryigQvYu19ygnoy3uho1cD/projectcss
 import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JjnjqRD_H8EA/css
+
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
+
+import { clerkLogout as __fn_clerkLogout } from "../../../utils/clerkLogoutAction"; // plasmic-import: clerkLogout/customFunction
 
 createPlasmicElementProxy;
 
@@ -80,13 +86,15 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
+  button?: Flex__<typeof Button>;
   h1?: Flex__<"h1">;
-  text?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
 
-const $$ = {};
+const $$ = {
+  clerkLogout: __fn_clerkLogout
+};
 
 function useNextRouter() {
   try {
@@ -142,14 +150,57 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <div className={classNames(projectcss.all, sty.freeBox___8Qdfh)}>
+          <Stack__
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox___8Qdfh)}
+          >
             <clerkUserButton
               data-plasmic-name={"clerkUserButton"}
               data-plasmic-override={overrides.clerkUserButton}
               className={classNames("__wab_instance", sty.clerkUserButton)}
               showName={true}
             />
-          </div>
+
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return $$.clerkLogout();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__vGbGp
+                )}
+              >
+                {"Logout"}
+              </div>
+            </Button>
+          </Stack__>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
             <h1
               data-plasmic-name={"h1"}
@@ -164,12 +215,10 @@ function PlasmicHomepage__RenderFunc(props: {
               {"Home page"}
             </h1>
             <div
-              data-plasmic-name={"text"}
-              data-plasmic-override={overrides.text}
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text
+                sty.text__rjriA
               )}
             >
               {"Dit is een test."}
@@ -182,10 +231,10 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "clerkUserButton", "h1", "text"],
+  root: ["root", "clerkUserButton", "button", "h1"],
   clerkUserButton: ["clerkUserButton"],
-  h1: ["h1"],
-  text: ["text"]
+  button: ["button"],
+  h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -193,8 +242,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   clerkUserButton: typeof clerkUserButton;
+  button: typeof Button;
   h1: "h1";
-  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -258,8 +307,8 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     clerkUserButton: makeNodeComponent("clerkUserButton"),
+    button: makeNodeComponent("button"),
     h1: makeNodeComponent("h1"),
-    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

@@ -55,9 +55,34 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/login"
+        },
+        {
+          "id": "nPwEx6GLwm-X",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "ryigQvYu19ygnoy3uho1cD",
+          "renderModuleFilePath": "plasmic/test_clerk_login/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/test_clerk_login/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
-      "icons": [],
+      "icons": [
+        {
+          "id": "jx9C0ZbPUTiL",
+          "name": "ChecksvgIcon",
+          "moduleFilePath": "plasmic/test_clerk_login/icons/PlasmicIcon__Checksvg.tsx"
+        },
+        {
+          "id": "Q8VEKYx1lhVM",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/test_clerk_login/icons/PlasmicIcon__Icon.tsx"
+        }
+      ],
       "images": [],
       "indirect": false,
       "globalContextsFilePath": "",
@@ -82,7 +107,15 @@
           "componentImportPath": "./components/clerktdf/tdf-userbutton"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [
+        {
+          "defaultExport": false,
+          "id": "clerkLogout",
+          "importPath": "./utils/clerkLogoutAction",
+          "name": "clerkLogout",
+          "namespace": null
+        }
+      ]
     }
   ],
   "globalVariants": {

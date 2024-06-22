@@ -29,8 +29,6 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
   width: 100%;
   height: 100px;
   max-width: 100%;
@@ -38,10 +36,47 @@
   grid-column-end: -1 !important;
   padding: 8px;
 }
+.freeBox___8Qdfh > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: calc(0px - 20px);
+  width: calc(100% + 20px);
+}
+.freeBox___8Qdfh > :global(.__wab_flex-container) > *,
+.freeBox___8Qdfh > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___8Qdfh > :global(.__wab_flex-container) > picture > img,
+.freeBox___8Qdfh
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 20px;
+}
 .clerkUserButton:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__edpTx {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__vGbGp {
+  font-weight: 300;
+  font-size: 14px;
+}
+.svg__rPLh {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }
 .freeBox__wjU6V {
   display: flex;
@@ -62,7 +97,7 @@
   margin-bottom: 32px;
   min-width: 0;
 }
-.text {
+.text__rjriA {
   position: relative;
   width: 100%;
   height: auto;
