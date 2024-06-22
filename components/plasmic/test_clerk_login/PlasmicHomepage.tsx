@@ -266,7 +266,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 sty.text__rjriA
               )}
             >
-              {"Dit is een test. 2"}
+              {"Dit is een test. 3"}
             </div>
           </div>
         </div>
