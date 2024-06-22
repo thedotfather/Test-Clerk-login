@@ -12,18 +12,16 @@ import { useClerkLogout } from '@/hooks/useClerkLogout';
 
 
 interface LogoutWrapperProps {
-    children: React.ReactNode;
+    // children: React.ReactNode;
 }
 
 const LogoutWrapper: React.FC<LogoutWrapperProps> = (
     {
-        children
+        // children
     }) => {
   return (
     <div>
-        <SignOutButton>
-            {children}
-        </SignOutButton>
+        <SignOutButton/>
     </div>
   );
 }
