@@ -61,6 +61,7 @@ import {
 
 import { clerkUserButton } from "../../clerktdf/tdf-userbutton"; // plasmic-import: utsaHgwz9FL1/codeComponent
 import Button from "../../Button"; // plasmic-import: nPwEx6GLwm-X/component
+import { LogoutWrapper } from "../../logoutWrapper"; // plasmic-import: isFSHM3lJGWx/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -71,7 +72,6 @@ import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
 
 import { testFunction as __fn_testFunction } from "../../../functions/clerkLogoutAction"; // plasmic-import: testFunction/customFunction
-import { clerkLogout3 as __fn_clerkLogout3 } from "../../../functions/clerkLogoutAction"; // plasmic-import: clerkLogout3/customFunction
 
 createPlasmicElementProxy;
 
@@ -87,14 +87,14 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
+  logoutWrapper?: Flex__<typeof LogoutWrapper>;
   h1?: Flex__<"h1">;
 };
 
 export interface DefaultHomepageProps {}
 
 const $$ = {
-  testFunction: __fn_testFunction,
-  clerkLogout3: __fn_clerkLogout3
+  testFunction: __fn_testFunction
 };
 
 function useNextRouter() {
@@ -201,42 +201,50 @@ function PlasmicHomepage__RenderFunc(props: {
                 {"Test function"}
               </div>
             </Button>
-            <Button
-              className={classNames("__wab_instance", sty.button__yNygr)}
-              onClick={async event => {
-                const $steps = {};
-
-                $steps["runCode"] = true
-                  ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return $$.clerkLogout3();
-                        }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
-                      })?.apply(null, [actionArgs]);
-                    })()
-                  : undefined;
-                if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
-                ) {
-                  $steps["runCode"] = await $steps["runCode"];
-                }
-              }}
+            <LogoutWrapper
+              data-plasmic-name={"logoutWrapper"}
+              data-plasmic-override={overrides.logoutWrapper}
+              className={classNames("__wab_instance", sty.logoutWrapper)}
             >
-              <div
-                className={classNames(
-                  projectcss.all,
-                  projectcss.__wab_text,
-                  sty.text__n8I3
-                )}
+              <Button
+                className={classNames("__wab_instance", sty.button__yNygr)}
+                onClick={async event => {
+                  const $steps = {};
+
+                  $steps["runCode"] = true
+                    ? (() => {
+                        const actionArgs = {
+                          customFunction: async () => {
+                            return (() => {
+                              return console.log("Ran logout");
+                            })();
+                          }
+                        };
+                        return (({ customFunction }) => {
+                          return customFunction();
+                        })?.apply(null, [actionArgs]);
+                      })()
+                    : undefined;
+                  if (
+                    $steps["runCode"] != null &&
+                    typeof $steps["runCode"] === "object" &&
+                    typeof $steps["runCode"].then === "function"
+                  ) {
+                    $steps["runCode"] = await $steps["runCode"];
+                  }
+                }}
               >
-                {"Logout"}
-              </div>
-            </Button>
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text__n8I3
+                  )}
+                >
+                  {"Logout"}
+                </div>
+              </Button>
+            </LogoutWrapper>
           </Stack__>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
             <h1
@@ -268,8 +276,9 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "clerkUserButton", "h1"],
+  root: ["root", "clerkUserButton", "logoutWrapper", "h1"],
   clerkUserButton: ["clerkUserButton"],
+  logoutWrapper: ["logoutWrapper"],
   h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -278,6 +287,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   clerkUserButton: typeof clerkUserButton;
+  logoutWrapper: typeof LogoutWrapper;
   h1: "h1";
 };
 
@@ -342,6 +352,7 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     clerkUserButton: makeNodeComponent("clerkUserButton"),
+    logoutWrapper: makeNodeComponent("logoutWrapper"),
     h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicHomepage

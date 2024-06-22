@@ -105,6 +105,12 @@
           "name": "clerkUserButton",
           "displayName": "clerkUserButton",
           "componentImportPath": "./components/clerktdf/tdf-userbutton"
+        },
+        {
+          "id": "isFSHM3lJGWx",
+          "name": "LogoutWrapper",
+          "displayName": "LogoutWrapper",
+          "componentImportPath": "./components/logoutWrapper"
         }
       ],
       "customFunctions": [
