@@ -43,11 +43,6 @@ registerComponent(ClerkSignOutButton, {
       type: 'string',
       displayName: 'Session ID',
       description: 'The ID of a specific session to sign out of'
-    },
-    children: {
-      type: 'slot',
-      displayName: 'Children',
-      description: 'Content to display inside the button'
     }
   },
   importPath: './components/logoutButtonClerk'
