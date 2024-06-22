@@ -59,6 +59,8 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
+import { ClerkSignInWrapper } from "../../clerktdf/clerkSignInWrapper"; // plasmic-import: 7ibegwHjrRBd/codeComponent
+
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic.module.css"; // plasmic-import: ryigQvYu19ygnoy3uho1cD/projectcss
@@ -78,6 +80,7 @@ export const PlasmicLogin__ArgProps = new Array<ArgPropType>();
 export type PlasmicLogin__OverridesType = {
   root?: Flex__<"div">;
   text?: Flex__<"div">;
+  clerkSignInWrapper?: Flex__<typeof ClerkSignInWrapper>;
 };
 
 export interface DefaultLoginProps {}
@@ -149,6 +152,11 @@ function PlasmicLogin__RenderFunc(props: {
           >
             {"Login"}
           </div>
+          <ClerkSignInWrapper
+            data-plasmic-name={"clerkSignInWrapper"}
+            data-plasmic-override={overrides.clerkSignInWrapper}
+            className={classNames("__wab_instance", sty.clerkSignInWrapper)}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -156,8 +164,9 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text"],
-  text: ["text"]
+  root: ["root", "text", "clerkSignInWrapper"],
+  text: ["text"],
+  clerkSignInWrapper: ["clerkSignInWrapper"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -165,6 +174,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   text: "div";
+  clerkSignInWrapper: typeof ClerkSignInWrapper;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -228,6 +238,7 @@ export const PlasmicLogin = Object.assign(
   {
     // Helper components rendering sub-elements
     text: makeNodeComponent("text"),
+    clerkSignInWrapper: makeNodeComponent("clerkSignInWrapper"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,

@@ -71,8 +71,6 @@ import sty from "./PlasmicHomepage.module.css"; // plasmic-import: JjnjqRD_H8EA/
 import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
 
-import { testFunction as __fn_testFunction } from "../../../functions/clerkLogoutAction"; // plasmic-import: testFunction/customFunction
-
 createPlasmicElementProxy;
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -95,9 +93,7 @@ export type PlasmicHomepage__OverridesType = {
 
 export interface DefaultHomepageProps {}
 
-const $$ = {
-  testFunction: __fn_testFunction
-};
+const $$ = {};
 
 function useNextRouter() {
   try {
@@ -172,26 +168,29 @@ function PlasmicHomepage__RenderFunc(props: {
               onClick={async event => {
                 const $steps = {};
 
-                $steps["runCode"] = true
+                $steps["goToLogin"] = true
                   ? (() => {
-                      const actionArgs = {
-                        customFunction: async () => {
-                          return (() => {
-                            return $$.testFunction();
-                          })();
+                      const actionArgs = { destination: `/login` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
                         }
-                      };
-                      return (({ customFunction }) => {
-                        return customFunction();
                       })?.apply(null, [actionArgs]);
                     })()
                   : undefined;
                 if (
-                  $steps["runCode"] != null &&
-                  typeof $steps["runCode"] === "object" &&
-                  typeof $steps["runCode"].then === "function"
+                  $steps["goToLogin"] != null &&
+                  typeof $steps["goToLogin"] === "object" &&
+                  typeof $steps["goToLogin"].then === "function"
                 ) {
-                  $steps["runCode"] = await $steps["runCode"];
+                  $steps["goToLogin"] = await $steps["goToLogin"];
                 }
               }}
             >
@@ -202,7 +201,7 @@ function PlasmicHomepage__RenderFunc(props: {
                   sty.text__vGbGp
                 )}
               >
-                {"Test function"}
+                {"To login page"}
               </div>
             </Button>
             <ClerkSignOutButton

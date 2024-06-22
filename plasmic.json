@@ -111,6 +111,12 @@
           "name": "ClerkSignOutButton",
           "displayName": "ClerkSignOutButton",
           "componentImportPath": "./components/logoutButtonClerk"
+        },
+        {
+          "id": "7ibegwHjrRBd",
+          "name": "ClerkSignInWrapper",
+          "displayName": "ClerkSignInWrapper",
+          "componentImportPath": "./components/clerktdf/clerkSignInWrapper"
         }
       ],
       "customFunctions": [
