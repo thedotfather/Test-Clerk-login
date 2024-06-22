@@ -33,7 +33,8 @@ import { ClerkLogout } from '../functions/clerkLogoutAction';
 
 registerFunction(ClerkLogout, {
   name: 'clerkLogout3',
-  importPath: './functions/clerkLogoutAction'
+  importPath: './functions/clerkLogoutAction',
+  isDefaultExport: false
 });
 //test
 
