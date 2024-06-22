@@ -19,7 +19,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider publishableKey={publishableKey} {...pageProps}>
       <PlasmicRootWrapperWithAuth>
-        <SignOutButton/>
         <PlasmicRootProvider Head={Head}>
         
             <Component {...pageProps}/>

@@ -14,7 +14,7 @@ export default function PlasmicHost() {
   return <PlasmicCanvasHost />;
 }
 
-import TdfUserButton from '../components/clerktdf/tdf-userbutton';
+import { TdfUserButton } from '../components/clerktdf/tdf-userbutton';
 
 registerComponent(TdfUserButton, 
   {

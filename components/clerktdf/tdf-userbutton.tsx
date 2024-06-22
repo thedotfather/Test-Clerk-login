@@ -5,7 +5,7 @@ interface TdfUserButtonProps {
     showName: boolean;
 }
 
-const TdfUserButton: React.FC<TdfUserButtonProps> = (
+export const TdfUserButton: React.FC<TdfUserButtonProps> = (
     {
         showName
     }) => {
@@ -25,4 +25,3 @@ const TdfUserButton: React.FC<TdfUserButtonProps> = (
   );
 }
 
-export default TdfUserButton;
