@@ -114,6 +114,13 @@
           "importPath": "./functions/clerkLogoutAction",
           "name": "clerkLogout2",
           "namespace": null
+        },
+        {
+          "defaultExport": false,
+          "id": "testFunction",
+          "importPath": "./functions/clerkLogoutAction",
+          "name": "testFunction",
+          "namespace": null
         }
       ]
     }
