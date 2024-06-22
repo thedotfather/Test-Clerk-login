@@ -29,7 +29,7 @@ registerComponent(TdfUserButton,
   }
 );
 
-import { ClerkLogoutWrapper } from '../components/clerktdf/tdf-clerkLogoutWrapper';
+import ClerkLogoutWrapper from '../components/clerktdf/tdf-clerkLogoutWrapper';
 
 registerComponent(ClerkLogoutWrapper, 
   {
