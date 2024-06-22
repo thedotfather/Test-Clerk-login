@@ -4,13 +4,11 @@ import { SignOutButton } from '@clerk/nextjs';
 interface ClerkSignOutButtonProps {
   redirectUrl?: string;
   sessionId?: string;
-  children?: React.ReactNode;
 }
 
-const ClerkSignOutButton: React.FC<ClerkSignOutButtonProps> = ({ redirectUrl, sessionId, children }) => {
+const ClerkSignOutButton: React.FC<ClerkSignOutButtonProps> = ({ redirectUrl, sessionId }) => {
   return (
     <SignOutButton signOutOptions={{ sessionId }} redirectUrl={redirectUrl}>
-      {children || 'Sign Out'}
     </SignOutButton>
   );
 };
