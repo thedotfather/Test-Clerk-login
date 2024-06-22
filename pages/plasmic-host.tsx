@@ -37,7 +37,7 @@ registerComponent(ClerkLogoutWrapper,
     props: {
       children: 'slot'
     },
-    importPath: './components/clerktdf/Tdf-clerkLogoutWrapper'
+    importPath: './components/clerktdf/tdf-clerkLogoutWrapper'
   }
 );
 
