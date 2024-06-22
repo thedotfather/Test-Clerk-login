@@ -1,4 +1,5 @@
 import React from 'react';
+import { SignOutButton } from "@clerk/nextjs";
 import { useClerkLogout } from '@/hooks/useClerkLogout';
 
 // export default function ClerkLogoutWrapper({ children }: { children: React.ReactNode }) {
@@ -20,7 +21,9 @@ const LogoutWrapper: React.FC<LogoutWrapperProps> = (
     }) => {
   return (
     <div>
-      {children}
+        <SignOutButton>
+            {children}
+        </SignOutButton>
     </div>
   );
 }
