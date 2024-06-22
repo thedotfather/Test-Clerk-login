@@ -59,9 +59,9 @@ import {
   useGlobalActions
 } from "@plasmicapp/react-web/lib/host";
 
-import { ClerkSignOutButton } from "../../logoutButtonClerk"; // plasmic-import: 1Cy4KmX8hEfh/codeComponent
 import { clerkUserButton } from "../../clerktdf/tdf-userbutton"; // plasmic-import: utsaHgwz9FL1/codeComponent
 import Button from "../../Button"; // plasmic-import: nPwEx6GLwm-X/component
+import { ClerkSignOutButton } from "../../logoutButtonClerk"; // plasmic-import: 1Cy4KmX8hEfh/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -86,9 +86,10 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
-  clerkSignOutButton?: Flex__<typeof ClerkSignOutButton>;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
   button?: Flex__<typeof Button>;
+  clerkSignOutButton?: Flex__<typeof ClerkSignOutButton>;
+  svg?: Flex__<"svg">;
   h1?: Flex__<"h1">;
 };
 
@@ -157,12 +158,6 @@ function PlasmicHomepage__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox___8Qdfh)}
           >
-            <ClerkSignOutButton
-              data-plasmic-name={"clerkSignOutButton"}
-              data-plasmic-override={overrides.clerkSignOutButton}
-              className={classNames("__wab_instance", sty.clerkSignOutButton)}
-            />
-
             <clerkUserButton
               data-plasmic-name={"clerkUserButton"}
               data-plasmic-override={overrides.clerkUserButton}
@@ -210,6 +205,18 @@ function PlasmicHomepage__RenderFunc(props: {
                 {"Test function"}
               </div>
             </Button>
+            <ClerkSignOutButton
+              data-plasmic-name={"clerkSignOutButton"}
+              data-plasmic-override={overrides.clerkSignOutButton}
+              className={classNames("__wab_instance", sty.clerkSignOutButton)}
+            >
+              <IconIcon
+                data-plasmic-name={"svg"}
+                data-plasmic-override={overrides.svg}
+                className={classNames(projectcss.all, sty.svg)}
+                role={"img"}
+              />
+            </ClerkSignOutButton>
           </Stack__>
           <div className={classNames(projectcss.all, sty.freeBox__wjU6V)}>
             <h1
@@ -241,10 +248,18 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "clerkSignOutButton", "clerkUserButton", "button", "h1"],
-  clerkSignOutButton: ["clerkSignOutButton"],
+  root: [
+    "root",
+    "clerkUserButton",
+    "button",
+    "clerkSignOutButton",
+    "svg",
+    "h1"
+  ],
   clerkUserButton: ["clerkUserButton"],
   button: ["button"],
+  clerkSignOutButton: ["clerkSignOutButton", "svg"],
+  svg: ["svg"],
   h1: ["h1"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -252,9 +267,10 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  clerkSignOutButton: typeof ClerkSignOutButton;
   clerkUserButton: typeof clerkUserButton;
   button: typeof Button;
+  clerkSignOutButton: typeof ClerkSignOutButton;
+  svg: "svg";
   h1: "h1";
 };
 
@@ -318,9 +334,10 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    clerkSignOutButton: makeNodeComponent("clerkSignOutButton"),
     clerkUserButton: makeNodeComponent("clerkUserButton"),
     button: makeNodeComponent("button"),
+    clerkSignOutButton: makeNodeComponent("clerkSignOutButton"),
+    svg: makeNodeComponent("svg"),
     h1: makeNodeComponent("h1"),
 
     // Metadata about props expected for PlasmicHomepage
