@@ -32,6 +32,6 @@ registerComponent(TdfUserButton,
 import { useClerkLogout } from '../functions/clerkLogoutAction';
 
 registerFunction(useClerkLogout, {
-  name: 'clerkLogout',
+  name: 'clerkLogout2',
   importPath: './utils/clerkLogoutAction'
 });
