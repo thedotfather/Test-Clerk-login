@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import {ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton} from '@clerk/nextjs';
+import {ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton, SignOutButton} from '@clerk/nextjs';
 
 import { getPlasmicAppUserFromToken } from '@plasmicapp/auth-api';
 import { useAuth } from '@clerk/nextjs';
@@ -19,6 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider publishableKey={publishableKey} {...pageProps}>
       <PlasmicRootWrapperWithAuth>
+        <SignOutButton/>
         <PlasmicRootProvider Head={Head}>
         
             <Component {...pageProps}/>
