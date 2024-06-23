@@ -19,10 +19,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider publishableKey={publishableKey} {...pageProps}>
       <PlasmicRootWrapperWithAuth>
-
         
             <Component {...pageProps}/>
-
 
       </PlasmicRootWrapperWithAuth>
     </ClerkProvider>
@@ -30,27 +28,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 }
 
 function PlasmicRootWrapperWithAuth({ children }: { children: React.ReactNode }) {
-  // const { isLoaded, userId } = useAuth();
-  // const [plasmicUser, setPlasmicUser] = useState(null);
-
-  // useEffect(() => {
-  //   async function fetchPlasmicUser() {
-  //     if (isLoaded && userId) {
-  //       try {
-  //         const response = await fetch('/api/authApi');
-  //         if (!response.ok) {
-  //           throw new Error('Failed to get Plasmic user');
-  //         }
-  //         //const data = await response.json();
-  //         //setPlasmicUser(data);
-  //       } catch (error) {
-  //         console.error('Error fetching Plasmic user:', error);
-  //       }
-  //     }
-  //   }
-
-  //   fetchPlasmicUser();
-  // }, [isLoaded, userId]);
 
   const { plasmicUser, plasmicUserToken } = useEnsurePlasmicUser();
 
@@ -63,26 +40,4 @@ function PlasmicRootWrapperWithAuth({ children }: { children: React.ReactNode })
       {children}
     </PlasmicRootProvider>
   );
-
-  // return (
-  //   <div>
-  //     {children}
-  //   </div>
-  // );
 }
-
-// async function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) {
-//   //const { isUserLoading, plasmicUser, plasmicUserToken } = usePlasmicAuthData();
-//   //const targResult = ExecuteEnsurePlasmicAppUser();
-
-//   const response = await fetch('/api/authApi');
-//   if (!response.ok) {
-//     throw new Error('Failed to get Plasmic user');
-//   }
-
-//   return (
-//     <div>
-//       {props.children}
-//     </div>
-//   );
-// }
