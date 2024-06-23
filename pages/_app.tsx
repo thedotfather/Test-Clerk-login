@@ -19,11 +19,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ClerkProvider publishableKey={publishableKey} {...pageProps}>
       <PlasmicRootWrapperWithAuth>
-        <PlasmicRootProvider Head={Head}>
+
         
             <Component {...pageProps}/>
 
-        </PlasmicRootProvider>
+
       </PlasmicRootWrapperWithAuth>
     </ClerkProvider>
   );
@@ -52,13 +52,23 @@ function PlasmicRootWrapperWithAuth({ children }: { children: React.ReactNode })
   //   fetchPlasmicUser();
   // }, [isLoaded, userId]);
 
-  useEnsurePlasmicUser();
+  const { plasmicUser, plasmicUserToken } = useEnsurePlasmicUser();
 
   return (
-    <div>
+    <PlasmicRootProvider
+      Head={Head}
+      user={plasmicUser}
+      userAuthToken={plasmicUserToken}
+    >
       {children}
-    </div>
+    </PlasmicRootProvider>
   );
+
+  // return (
+  //   <div>
+  //     {children}
+  //   </div>
+  // );
 }
 
 // async function PlasmicRootWrapperWithAuth(props: { children: React.ReactNode }) {

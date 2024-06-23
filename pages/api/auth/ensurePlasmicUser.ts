@@ -17,8 +17,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const result = await ensurePlasmicAppUser({
-    //   email: targEmail,
-      email: 'stijndvos@hotmail.com',
+      email: targEmail,
+    //   email: 'stijndvos@hotmail.com',
       appSecret: process.env.PLASMIC_APP_SECRET || ''
     });
 

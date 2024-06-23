@@ -1,9 +1,11 @@
 // hooks/useEnsurePlasmicUser.ts
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 
 export const useEnsurePlasmicUser = () => {
   const { isLoaded, isSignedIn, user } = useUser();
+  const [plasmicUser, setPlasmicUser] = useState(null);
+  const [plasmicUserToken, setPlasmicUserToken] = useState(null);
 
   useEffect(() => {
     const ensureUser = async () => {
@@ -19,10 +21,15 @@ export const useEnsurePlasmicUser = () => {
               email: user.primaryEmailAddress?.emailAddress, 
             }),
           });
-
+          
           if (!response.ok) {
             throw new Error('hooks/useEnsurePlasmicUser.ts:  Failed to ensure Plasmic user');
           }
+
+          const data = await response.json();
+          setPlasmicUser(data.result.user);
+          setPlasmicUserToken(data.result.token);
+
         } catch (error) {
           console.error(error);
         }
@@ -31,4 +38,6 @@ export const useEnsurePlasmicUser = () => {
 
     ensureUser();
   }, [isLoaded, isSignedIn, user]);
+
+  return { plasmicUser, plasmicUserToken };
 };
