@@ -60,11 +60,22 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import { ClerkSignInWrapper } from "../../clerktdf/clerkSignInWrapper"; // plasmic-import: 7ibegwHjrRBd/codeComponent
+import TextInput from "../../TextInput"; // plasmic-import: l9bvO8Lp_BTE/component
+import { AntdPassword } from "@plasmicpkgs/antd5/skinny/registerInput";
+import { inputHelpers as AntdPassword_Helpers } from "@plasmicpkgs/antd5/skinny/registerInput";
+import Button from "../../Button"; // plasmic-import: nPwEx6GLwm-X/component
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
+import plasmic_antd_5_hostless_css from "../antd_5_hostless/plasmic.module.css"; // plasmic-import: ohDidvG9XsCeFumugENU3J/projectcss
 import projectcss from "./plasmic.module.css"; // plasmic-import: ryigQvYu19ygnoy3uho1cD/projectcss
 import sty from "./PlasmicLogin.module.css"; // plasmic-import: mnzamsirDgt2/css
+
+import SearchsvgIcon from "./icons/PlasmicIcon__Searchsvg"; // plasmic-import: veshFowDL3cG/icon
+import ChecksvgIcon from "./icons/PlasmicIcon__Checksvg"; // plasmic-import: jx9C0ZbPUTiL/icon
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: Q8VEKYx1lhVM/icon
+
+import { ClerkSignIn as __fn_ClerkSignIn } from "../../../functions/clerkSignInAction"; // plasmic-import: ClerkSignIn/customFunction
 
 createPlasmicElementProxy;
 
@@ -79,13 +90,18 @@ export const PlasmicLogin__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicLogin__OverridesType = {
   root?: Flex__<"div">;
-  text?: Flex__<"div">;
   clerkSignInWrapper?: Flex__<typeof ClerkSignInWrapper>;
+  freeBox?: Flex__<"div">;
+  textInputEmail?: Flex__<typeof TextInput>;
+  passwordInput?: Flex__<typeof AntdPassword>;
+  button?: Flex__<typeof Button>;
 };
 
 export interface DefaultLoginProps {}
 
-const $$ = {};
+const $$ = {
+  ClerkSignIn: __fn_ClerkSignIn
+};
 
 function useNextRouter() {
   try {
@@ -116,6 +132,32 @@ function PlasmicLogin__RenderFunc(props: {
 
   const currentUser = useCurrentUser?.() || {};
 
+  const stateSpecs: Parameters<typeof useDollarState>[0] = React.useMemo(
+    () => [
+      {
+        path: "textInputEmail.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
+      },
+      {
+        path: "passwordInput.value",
+        type: "private",
+        variableType: "text",
+        initFunc: ({ $props, $state, $queries, $ctx }) => undefined,
+
+        onMutate: generateOnMutateForSpec("value", AntdPassword_Helpers)
+      }
+    ],
+    [$props, $ctx, $refs]
+  );
+  const $state = useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries: {},
+    $refs
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -138,16 +180,15 @@ function PlasmicLogin__RenderFunc(props: {
             projectcss.plasmic_default_styles,
             projectcss.plasmic_mixins,
             projectcss.plasmic_tokens,
+            plasmic_antd_5_hostless_css.plasmic_tokens,
             sty.root
           )}
         >
           <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
             className={classNames(
               projectcss.all,
               projectcss.__wab_text,
-              sty.text
+              sty.text__reLcC
             )}
           >
             {"Login"}
@@ -157,6 +198,118 @@ function PlasmicLogin__RenderFunc(props: {
             data-plasmic-override={overrides.clerkSignInWrapper}
             className={classNames("__wab_instance", sty.clerkSignInWrapper)}
           />
+
+          <div
+            data-plasmic-name={"freeBox"}
+            data-plasmic-override={overrides.freeBox}
+            className={classNames(projectcss.all, sty.freeBox)}
+          >
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__vXlsD
+              )}
+            >
+              {"Email"}
+            </div>
+            <TextInput
+              data-plasmic-name={"textInputEmail"}
+              data-plasmic-override={overrides.textInputEmail}
+              className={classNames("__wab_instance", sty.textInputEmail)}
+              onChange={(...eventArgs) => {
+                generateStateOnChangeProp($state, ["textInputEmail", "value"])(
+                  (e => e.target?.value).apply(null, eventArgs)
+                );
+              }}
+              placeholder={"Email"}
+              value={
+                generateStateValueProp($state, ["textInputEmail", "value"]) ??
+                ""
+              }
+            />
+
+            <div
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text__qxgs6
+              )}
+            >
+              {"Password"}
+            </div>
+            {(() => {
+              const child$Props = {
+                className: classNames("__wab_instance", sty.passwordInput),
+                onChange: generateStateOnChangePropForCodeComponents(
+                  $state,
+                  "value",
+                  ["passwordInput", "value"],
+                  AntdPassword_Helpers
+                ),
+                placeholder: "Password",
+                value: generateStateValueProp($state, [
+                  "passwordInput",
+                  "value"
+                ])
+              };
+              initializeCodeComponentStates(
+                $state,
+                [
+                  {
+                    name: "value",
+                    plasmicStateName: "passwordInput.value"
+                  }
+                ],
+                [],
+                AntdPassword_Helpers ?? {},
+                child$Props
+              );
+
+              return (
+                <AntdPassword
+                  data-plasmic-name={"passwordInput"}
+                  data-plasmic-override={overrides.passwordInput}
+                  {...child$Props}
+                />
+              );
+            })()}
+            <Button
+              data-plasmic-name={"button"}
+              data-plasmic-override={overrides.button}
+              className={classNames("__wab_instance", sty.button)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["runCode"] = true
+                  ? (() => {
+                      const actionArgs = {
+                        customFunction: async () => {
+                          return (() => {
+                            return $$.ClerkSignIn(
+                              $state.textInputEmail,
+                              $state.passwordInput
+                            );
+                          })();
+                        }
+                      };
+                      return (({ customFunction }) => {
+                        return customFunction();
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["runCode"] != null &&
+                  typeof $steps["runCode"] === "object" &&
+                  typeof $steps["runCode"].then === "function"
+                ) {
+                  $steps["runCode"] = await $steps["runCode"];
+                }
+              }}
+            >
+              {"Log in"}
+            </Button>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -164,17 +317,30 @@ function PlasmicLogin__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "clerkSignInWrapper"],
-  text: ["text"],
-  clerkSignInWrapper: ["clerkSignInWrapper"]
+  root: [
+    "root",
+    "clerkSignInWrapper",
+    "freeBox",
+    "textInputEmail",
+    "passwordInput",
+    "button"
+  ],
+  clerkSignInWrapper: ["clerkSignInWrapper"],
+  freeBox: ["freeBox", "textInputEmail", "passwordInput", "button"],
+  textInputEmail: ["textInputEmail"],
+  passwordInput: ["passwordInput"],
+  button: ["button"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  text: "div";
   clerkSignInWrapper: typeof ClerkSignInWrapper;
+  freeBox: "div";
+  textInputEmail: typeof TextInput;
+  passwordInput: typeof AntdPassword;
+  button: typeof Button;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -237,8 +403,11 @@ export const PlasmicLogin = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
     clerkSignInWrapper: makeNodeComponent("clerkSignInWrapper"),
+    freeBox: makeNodeComponent("freeBox"),
+    textInputEmail: makeNodeComponent("textInputEmail"),
+    passwordInput: makeNodeComponent("passwordInput"),
+    button: makeNodeComponent("button"),
 
     // Metadata about props expected for PlasmicLogin
     internalVariantProps: PlasmicLogin__VariantProps,

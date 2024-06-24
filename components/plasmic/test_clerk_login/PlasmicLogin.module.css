@@ -22,7 +22,7 @@
 .root > * {
   grid-column: 4;
 }
-.text {
+.text__reLcC {
   position: relative;
   width: 100%;
   height: auto;
@@ -34,4 +34,76 @@
   max-width: 100%;
   object-fit: cover;
   position: relative;
+}
+.freeBox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  background: #ffffff;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  min-width: 0;
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid var(--token-Pxe4wDL2kJpb);
+}
+.text__vXlsD {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 5px;
+  min-width: 0;
+}
+.textInputEmail:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+}
+.svg__iGXl2 {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__sTyGc {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.text__qxgs6 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  min-width: 0;
+}
+.passwordInput:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.button:global(.__wab_instance) {
+  max-width: 100%;
+  position: relative;
+  margin-top: 30px;
+}
+.svg__qfvpm {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
+}
+.svg__lYpz {
+  position: relative;
+  object-fit: cover;
+  width: auto;
+  height: 1em;
 }
