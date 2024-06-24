@@ -83,6 +83,20 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "text-input"
+        },
+        {
+          "id": "ybDLPtv2CFkL",
+          "name": "AdminPage",
+          "type": "managed",
+          "projectId": "ryigQvYu19ygnoy3uho1cD",
+          "renderModuleFilePath": "plasmic/test_clerk_login/PlasmicAdminPage.tsx",
+          "importSpec": {
+            "modulePath": "../pages/admin-page.tsx"
+          },
+          "cssFilePath": "plasmic/test_clerk_login/PlasmicAdminPage.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/admin-page"
         }
       ],
       "icons": [
@@ -553,7 +567,8 @@
           "componentImportPath": "@plasmicpkgs/antd5/skinny/registerBreadcrumb"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

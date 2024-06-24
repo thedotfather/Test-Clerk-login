@@ -86,7 +86,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: Flex__<"div">;
   clerkUserButton?: Flex__<typeof clerkUserButton>;
-  button?: Flex__<typeof Button>;
   clerkSignOutButton?: Flex__<typeof ClerkSignOutButton>;
   svg?: Flex__<"svg">;
   h1?: Flex__<"h1">;
@@ -164,9 +163,7 @@ function PlasmicHomepage__RenderFunc(props: {
             />
 
             <Button
-              data-plasmic-name={"button"}
-              data-plasmic-override={overrides.button}
-              className={classNames("__wab_instance", sty.button)}
+              className={classNames("__wab_instance", sty.button__ehe3K)}
               onClick={async event => {
                 const $steps = {};
 
@@ -204,6 +201,47 @@ function PlasmicHomepage__RenderFunc(props: {
                 )}
               >
                 {"To login page"}
+              </div>
+            </Button>
+            <Button
+              className={classNames("__wab_instance", sty.button__kbFj)}
+              onClick={async event => {
+                const $steps = {};
+
+                $steps["goToAdminPage"] = true
+                  ? (() => {
+                      const actionArgs = { destination: `/admin-page` };
+                      return (({ destination }) => {
+                        if (
+                          typeof destination === "string" &&
+                          destination.startsWith("#")
+                        ) {
+                          document
+                            .getElementById(destination.substr(1))
+                            .scrollIntoView({ behavior: "smooth" });
+                        } else {
+                          __nextRouter?.push(destination);
+                        }
+                      })?.apply(null, [actionArgs]);
+                    })()
+                  : undefined;
+                if (
+                  $steps["goToAdminPage"] != null &&
+                  typeof $steps["goToAdminPage"] === "object" &&
+                  typeof $steps["goToAdminPage"].then === "function"
+                ) {
+                  $steps["goToAdminPage"] = await $steps["goToAdminPage"];
+                }
+              }}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__ywLlu
+                )}
+              >
+                {"To admin page"}
               </div>
             </Button>
             <ClerkSignOutButton
@@ -327,16 +365,8 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: [
-    "root",
-    "clerkUserButton",
-    "button",
-    "clerkSignOutButton",
-    "svg",
-    "h1"
-  ],
+  root: ["root", "clerkUserButton", "clerkSignOutButton", "svg", "h1"],
   clerkUserButton: ["clerkUserButton"],
-  button: ["button"],
   clerkSignOutButton: ["clerkSignOutButton", "svg"],
   svg: ["svg"],
   h1: ["h1"]
@@ -347,7 +377,6 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   clerkUserButton: typeof clerkUserButton;
-  button: typeof Button;
   clerkSignOutButton: typeof ClerkSignOutButton;
   svg: "svg";
   h1: "h1";
@@ -414,7 +443,6 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     clerkUserButton: makeNodeComponent("clerkUserButton"),
-    button: makeNodeComponent("button"),
     clerkSignOutButton: makeNodeComponent("clerkSignOutButton"),
     svg: makeNodeComponent("svg"),
     h1: makeNodeComponent("h1"),
