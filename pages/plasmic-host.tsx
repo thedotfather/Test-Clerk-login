@@ -68,3 +68,27 @@ registerFunction(testFunction, {
   name: 'testFunction',
   importPath: './functions/clerkLogoutAction'
 });
+
+
+import { ClerkSignIn } from '../functions/clerkSignInAction';
+
+registerFunction(ClerkSignIn, {
+  name: 'ClerkSignIn',
+  params: [
+    {
+      name: 'email',
+      type: 'string',
+      description: 'The email address to sign in with'
+    },
+    {
+      name: 'password',
+      type: 'string',
+      description: 'The password to sign in with'
+    }
+  ],
+  returnValue: {
+    type: 'object',
+    description: 'Whether the sign-in was successful'
+  },
+  importPath: './functions/clerkSignInAction'
+});
