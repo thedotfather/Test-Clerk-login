@@ -3,8 +3,8 @@ import { ensurePlasmicAppUser } from '@plasmicapp/auth-api';
 import { ExecuteEnsurePlasmicAppUser } from './plasmic-auth';
 
 
-// const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmic-host(.*)']);
-const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)']);
+const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)', '/plasmic-host(.*)']);
+// const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)']);
 
 export default clerkMiddleware((auth, request) => {
   if(!isPublicRoute(request)) {
